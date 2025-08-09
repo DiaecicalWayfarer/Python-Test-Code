@@ -22,14 +22,15 @@
 
 # 熟食店
 
-sandwich_orders = ['金枪鱼三明治', '火腿奶酪三明治', '蔬菜全麦三明治']
-finished_sandwiches = []
-print("开始制作三明治...\n")
-while sandwich_orders:
-    current_order = sandwich_orders.pop(0)    
-    print(f"正在制作: {current_order}")   
-    finished_sandwiches.append(current_order)
-    print(f"已完成: {current_order}\n")
-print("\n所有三明治已完成:")
-for sandwich in finished_sandwiches:
-    print(f"- {sandwich}")
+# sandwich_orders = ['金枪鱼三明治', '火腿奶酪三明治', '蔬菜全麦三明治']
+# finished_sandwiches = []
+# print("开始制作三明治...\n")
+# while sandwich_orders:
+#     current_order = sandwich_orders.pop(0)    
+#     print(f"正在制作: {current_order}")   
+#     finished_sandwiches.append(current_order)
+#     print(f"已完成: {current_order}\n")
+# print("\n所有三明治已完成:")
+# for sandwich in finished_sandwiches:
+#     print(f"- {sandwich}")
+
