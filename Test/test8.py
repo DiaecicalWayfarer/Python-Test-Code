@@ -32,8 +32,14 @@
 #     formatted_name=get_formatted(f_name,l_name)
 #     print(formatted_name)
 
-# 
+# 消息
 
+def show_messages(messages):
+    """显示消息"""
+    for message in messages:
+        print(message)
 
+messages = ["hello","world","python"]
+show_messages(messages)
 
 
