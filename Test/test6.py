@@ -55,7 +55,6 @@
 #     'type': '金鱼',
 #     'owner': '钱七'
 # }
-
 # pets = [pet1, pet2, pet3, pet4, pet5]
 # print("所有宠物信息：")
 # for pet in pets:

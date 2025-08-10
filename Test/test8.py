@@ -39,7 +39,6 @@
 #     for message in messages:
 #         print(message)
 # def send_messages(messages,sent_messages=None):
-
 #     """发送消息"""
 #     if sent_messages is None:
 #         sent_messages = []
@@ -47,7 +46,6 @@
 #         sent_messages.append(message)
 #     for sent_message in sent_messages:
 #         print(f"发送消息：{sent_message}")
-
 # messages = ["hello","world","python"]
 # show_messages(messages)
 # send_messages(messages,sent_messages=None)
