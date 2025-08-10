@@ -42,31 +42,31 @@
 
 # 冰淇淋小店
 
-class Restaurant:
-    """餐馆"""
-    def __init__(self,resaturant_name,cuisine_type):
-        """初始化餐馆"""
-        self.resturant_name = resaturant_name
-        self.cuisine_type = cuisine_type
-    def describe_resturant(self):
-        """描述餐厅"""
-        print(f"餐厅名称：{self.resturant_name}")
-        print(f"餐厅类型：{self.cuisine_type}")
-    def open_resturant(self):
-         """打开餐厅"""
-         print(f"{self.resturant_name}正在营业，欢迎来到{self.cuisine_type}餐厅")
-class IceCreamStand(Restaurant):
-    """冰淇淋 Stand"""
-    def __init__(self,resturant_name,cuisine_type):
-        """初始化冰淇淋 Stand"""
-        super().__init__(resturant_name,cuisine_type)
-        self.flavors = ["vanilla","chocolate","strawberry"]
-    def show_flavors(self):
-        """显示冰淇淋口味"""
-        print("我们的冰淇淋口味有：")
-        for flavor in self.flavors:
-            print(flavor)
-so_icecream = IceCreamStand("张三冰淇淋","中国")
-so_icecream.show_flavors()
+# class Restaurant:
+#     """餐馆"""
+#     def __init__(self,resaturant_name,cuisine_type):
+#         """初始化餐馆"""
+#         self.resturant_name = resaturant_name
+#         self.cuisine_type = cuisine_type
+#     def describe_resturant(self):
+#         """描述餐厅"""
+#         print(f"餐厅名称：{self.resturant_name}")
+#         print(f"餐厅类型：{self.cuisine_type}")
+#     def open_resturant(self):
+#          """打开餐厅"""
+#          print(f"{self.resturant_name}正在营业，欢迎来到{self.cuisine_type}餐厅")
+# class IceCreamStand(Restaurant):
+#     """冰淇淋 Stand"""
+#     def __init__(self,resturant_name,cuisine_type):
+#         """初始化冰淇淋 Stand"""
+#         super().__init__(resturant_name,cuisine_type)
+#         self.flavors = ["vanilla","chocolate","strawberry"]
+#     def show_flavors(self):
+#         """显示冰淇淋口味"""
+#         print("我们的冰淇淋口味有：")
+#         for flavor in self.flavors:
+#             print(flavor)
+# so_icecream = IceCreamStand("张三冰淇淋","中国")
+# so_icecream.show_flavors()
  
  

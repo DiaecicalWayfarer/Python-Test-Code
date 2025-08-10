@@ -1,0 +1,3 @@
+ Tn Python you can do calculates
+ In Python you can update data
+ In Python you can read fi;es
