@@ -6,6 +6,7 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 plt.rc("font",family='YouYuan')
+from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
 # ---------- 1. 准备设备（优先使用 GPU） ----------
 if torch.cuda.is_available():
     device = torch.device("cuda")
@@ -144,6 +145,31 @@ def evaluate():
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
     return 100 * correct / total
+def evaluate_detailed():
+    """输出测试集上的精确率、召回率、F1分数和混淆矩阵"""
+    model.eval()
+    all_preds = []
+    all_labels = []
+    with torch.no_grad():
+        for inputs, labels in test_loader:
+            inputs, labels = inputs.to(device), labels.to(device)
+            outputs = model(inputs)
+            _, preds = torch.max(outputs, 1)
+            all_preds.extend(preds.cpu().numpy())
+            all_labels.extend(labels.cpu().numpy())
+    
+    print("\n========== 详细分类报告 ==========")
+    print(classification_report(all_labels, all_preds, digits=4))
+    
+    cm = confusion_matrix(all_labels, all_preds)
+    print("\n========== 混淆矩阵 ==========")
+    print(cm)
+    
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=range(10))
+    disp.plot(cmap='Blues', values_format='d')
+    plt.title('测试集混淆矩阵')
+    plt.show()
+    return all_labels, all_preds
 # ---------- 7. 训练循环 ----------
 num_epochs = 10
 train_accs = []
@@ -182,3 +208,5 @@ for i in range(15):
     axes[i].axis('off')
 plt.tight_layout()
 plt.show()
+# 新增调用
+evaluate_detailed()
