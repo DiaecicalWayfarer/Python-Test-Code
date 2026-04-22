@@ -5,6 +5,7 @@ import torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
+plt.rc("font",family='YouYuan')
 # ---------- 1. 准备设备（优先使用 GPU） ----------
 if torch.cuda.is_available():
     device = torch.device("cuda")
@@ -171,8 +172,8 @@ images, labels = next(iter(test_loader))
 images, labels = images.to(device), labels.to(device)
 outputs = model(images)
 _, preds = torch.max(outputs, 1)
-# 显示前 10 张
-fig, axes = plt.subplots(2, 5, figsize=(12, 6))
+# 显示前 15 张
+fig, axes = plt.subplots(3, 5, figsize=(12, 6))
 axes = axes.ravel()
 for i in range(15):
     img = images[i].cpu().squeeze().numpy()  # 转为 28x28 数组
